@@ -131,6 +131,50 @@
   animation: menu-in 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/* Kartice koje lebde: polako "disu" gore-dolje */
+@keyframes card-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+.float-card {
+  margin-top: 0;
+}
+
+.float-tilt {
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s ease;
+  will-change: transform;
+}
+
+/* Pomaci i nagibi imaju smisla tek kad su kartice jedna pored druge */
+@media (min-width: 1024px) {
+  .float-card {
+    margin-top: var(--offset, 0px);
+    animation: card-drift 8s ease-in-out infinite;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  .float-tilt {
+    rotate: var(--tilt, 0deg);
+    transition:
+      rotate 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.5s ease;
+  }
+
+  /* na hover se kartica ispravi, pa je "naginjanje" jasno citljivo */
+  .float-card:hover .float-tilt {
+    rotate: 0deg;
+  }
+}
+
 /* FAQ: plus koji se pretvara u minus kad je pitanje otvoreno */
 .faq-plus {
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);

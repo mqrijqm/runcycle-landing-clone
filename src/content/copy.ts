@@ -43,6 +43,14 @@ export type FaqItem = {
   readonly a: string;
 };
 
+/** Ilustrovana kartica koja lebdi. */
+export type CardItem = {
+  readonly title: string;
+  readonly body: string;
+  /** alt tekst za ilustraciju */
+  readonly alt: string;
+};
+
 export type Copy = {
   brand: string;
   /** aria-label za prekidac jezika */
@@ -90,6 +98,13 @@ export type Copy = {
       bookedLabel: string;
       bookedValue: string;
     };
+  };
+
+  /* --- Sekcija: ilustrovane kartice ---------------------------------------- */
+  cards: {
+    eyebrow: string;
+    title: string;
+    items: readonly CardItem[];
   };
 
   /* --- Sekcija: mogucnosti ------------------------------------------------- */
@@ -248,6 +263,28 @@ export const COPY: Record<Locale, Copy> = {
         bookedLabel: "Sastanak zakazan",
         bookedValue: "Četvrtak, 14:00 · 30 min",
       },
+    },
+
+    cards: {
+      eyebrow: "Tri obećanja",
+      title: "Tri stvari koje agent radi bolje od čovjeka.",
+      items: [
+        {
+          title: "Uvijek dostupan",
+          body: "AI agent odgovara i vodi pozive bez čekanja.",
+          alt: "Ilustracija Merkura sa kaducejem i radio talasima",
+        },
+        {
+          title: "Pamti sve",
+          body: "Svaki poziv i detalj ostaje zabilježen.",
+          alt: "Ilustracija svitka, guščjeg pera i mastionice",
+        },
+        {
+          title: "Bez šuma",
+          body: "Informacije se prenose tačno, bez gluvih telefona.",
+          alt: "Ilustracija dvije žene koje šapću jedna drugoj",
+        },
+      ],
     },
 
     features: {
@@ -519,6 +556,28 @@ export const COPY: Record<Locale, Copy> = {
         bookedLabel: "Meeting booked",
         bookedValue: "Thursday, 2:00 PM · 30 min",
       },
+    },
+
+    cards: {
+      eyebrow: "Three promises",
+      title: "Three things the agent does better than a human.",
+      items: [
+        {
+          title: "Always available",
+          body: "The AI agent answers and runs calls without making anyone wait.",
+          alt: "Illustration of Mercury with a caduceus and radio waves",
+        },
+        {
+          title: "Remembers everything",
+          body: "Every call and every detail stays on record.",
+          alt: "Illustration of a scroll, a quill and an inkwell",
+        },
+        {
+          title: "No noise",
+          body: "Information is passed on exactly, with no broken telephone.",
+          alt: "Illustration of two women whispering to each other",
+        },
+      ],
     },
 
     features: {

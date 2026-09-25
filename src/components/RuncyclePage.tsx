@@ -5,6 +5,7 @@ import { Hero } from "./Hero";
 import { BrandLogos } from "./BrandLogos";
 import { Value } from "./sections/Value";
 import { HowItWorks } from "./sections/HowItWorks";
+import { FloatingCards } from "./sections/FloatingCards";
 import { Features } from "./sections/Features";
 import { Results } from "./sections/Results";
 import { Quote } from "./sections/Quote";
@@ -28,6 +29,7 @@ export function RuncyclePage({ locale }: { locale: Locale }) {
         <BrandLogos label={t.brandsLabel} />
         <Value t={t} />
         <HowItWorks t={t} />
+        <FloatingCards t={t} />
         <Features t={t} />
         <Results t={t} />
         <Quote t={t} />
