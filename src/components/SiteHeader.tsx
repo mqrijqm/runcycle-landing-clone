@@ -1,10 +1,11 @@
 import type { Copy, Locale } from "@/content/copy";
 import { Asterisk } from "./icons";
 import { LangToggle } from "./LangToggle";
+import { MobileMenu } from "./MobileMenu";
 
 export function SiteHeader({ t, locale }: { t: Copy; locale: Locale }) {
   return (
-    <header className="relative flex h-[74px] shrink-0 items-center justify-between gap-4 px-6 md:px-[60px]">
+    <header className="relative z-30 flex h-[74px] shrink-0 items-center justify-between gap-4 px-6 md:px-[60px]">
       <a
         href="#"
         aria-label={`${t.brand} — ${locale === "bs" ? "početna" : "home"}`}
@@ -37,10 +38,12 @@ export function SiteHeader({ t, locale }: { t: Copy; locale: Locale }) {
 
         <a
           href="#"
-          className="flex h-[36px] items-center whitespace-nowrap rounded-full border border-line bg-white px-[14px] text-[13.5px] font-medium leading-none text-ink transition-colors hover:bg-pill md:h-[40px] md:px-[20px] md:text-[14.5px]"
+          className="flex h-[36px] items-center whitespace-nowrap rounded-full border border-line bg-white px-[14px] text-[13.5px] font-medium leading-none text-ink transition-colors hover:bg-pill md:h-[40px] md:px-[20px] md:text-[14.5px] max-md:hidden"
         >
           {t.headerCta}
         </a>
+
+        <MobileMenu t={t} />
       </div>
     </header>
   );

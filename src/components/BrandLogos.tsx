@@ -130,7 +130,7 @@ const BRANDS = [
 
 export function BrandLogos({ label }: { label: string }) {
   return (
-    <footer className="border-t border-line px-6 md:px-[60px]">
+    <section className="border-y border-line px-6 md:px-[60px]">
       <ul
         aria-label={label}
         className="grid grid-cols-4 justify-items-center gap-y-7 py-6 md:flex md:min-h-[68px] md:flex-nowrap md:items-center md:justify-between md:gap-y-0 md:py-0"
@@ -145,6 +145,6 @@ export function BrandLogos({ label }: { label: string }) {
           </li>
         ))}
       </ul>
-    </footer>
+    </section>
   );
 }

@@ -38,7 +38,7 @@ export function Document({
   children: React.ReactNode;
 }) {
   return (
-    <html lang={locale} className={fontClassName}>
+    <html lang={locale} className={fontClassName} suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );
