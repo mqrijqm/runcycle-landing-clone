@@ -32,13 +32,20 @@ src/
     globals.css          design tokeni + base stilovi
   components/
     Document.tsx         <html>/<body> omot + fontovi + metadata
-    RuncyclePage.tsx     sklapa stranicu
+    RuncyclePage.tsx     sklapa stranicu (redoslijed sekcija je ovdje)
+    Section.tsx          Container / Eyebrow / SectionTitle / Lead
+    Reveal.tsx           ulazak sadrzaja u vidno polje
     SiteHeader.tsx       logo, navigacija, toggle, CTA
+    MobileMenu.tsx       navigacija na telefonu (puni ekran)
+    SiteFooter.tsx       footer sa kolonama
     Hero.tsx             naslov, opis, dugmadi + poziva parallax scenu
     HeroParallax.tsx     parallax scena od 4 sloja (klijentska komponenta)
+    mocks.tsx            UI paneli: poziv u toku, CRM kartica, rezultati
     BrandLogos.tsx       traka sa logotipima
     LangToggle.tsx       BS / ENG prekidac
     icons.tsx            runcycle zvjezdica
+    sections/            ostale sekcije (Value, HowItWorks, FloatingCards,
+                         Features, Results, Quote, Pricing, Faq, FinalCta)
   content/
     copy.ts              sav tekst (bs + en) na jednom mjestu
 ```
@@ -87,6 +94,20 @@ Skripta radi tri stvari koje nisu očigledne:
 
 Izlaz su AVIF + WebP u `public/hero/` (ukupno ~440 KB u AVIF-u). AVIF ide prvi,
 WebP je fallback kroz `<picture>`.
+
+## Kartice koje lebde
+
+Sekcija `FloatingCards` koristi tri gotove ilustracije (Merkur, svitak, dvije
+žene). Na velikim ekranima kartice nisu poravnate — svaka ima svoj vertikalni
+pomak (`OFFSETS`), nagib (`TILTS`) i ritam "disanja" (`DELAYS`), a na hover se
+isprave i nagnu ka kursoru (3D tilt).
+
+Važno: **ilustracije su izvučene iz kartica sa upečenim tekstom**
+(`assets-source/extract-cards.py`). Tekst u karticama je bosanski, pa se ne
+može koristiti kao slika — naslov i opis su pravi tekst iz `copy.ts` i
+prevede se na engleski. Skripta nalazi ilustraciju kao najduži niz redova sa
+tamnim pikselima, pa sve tri kartice reže istim izrezom (da budu identično
+kadrirane).
 
 ## Ostalo
 
