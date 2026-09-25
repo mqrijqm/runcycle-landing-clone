@@ -1,21 +1,14 @@
 import type { CSSProperties } from "react";
 import type { Copy } from "@/content/copy";
 import { Asterisk } from "./icons";
+import { HeroParallax } from "./HeroParallax";
 
 export function Hero({ t }: { t: Copy }) {
   return (
     <section>
-      {/*
-        Hero slika. Zasad prazan sivi container — kad slika bude gotova,
-        zamijeni ovaj div sa <Image src="..." alt={t.hero.mediaAlt} fill />.
-        Proporcija prati referencu: 1200x448 na desktopu, 3:2 na mobilnom.
-      */}
-      <div
-        role="img"
-        aria-label={t.hero.mediaAlt}
-        className="rise aspect-[3/2] w-full bg-media md:aspect-[1200/448]"
-        style={{ "--rise-delay": "60ms" } as CSSProperties}
-      />
+      <div className="rise" style={{ "--rise-delay": "60ms" } as CSSProperties}>
+        <HeroParallax alt={t.hero.mediaAlt} />
+      </div>
 
       <div className="flex flex-col gap-9 px-6 pb-11 pt-10 md:flex-row md:items-start md:justify-between md:gap-16 md:pb-[46px] md:pl-[60px] md:pr-[120px] md:pt-[20px]">
         <h1 className="rise font-display text-[34px] leading-[1.06] tracking-[-0.005em] text-ink sm:text-[40px] md:text-[44px]">

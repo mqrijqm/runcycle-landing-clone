@@ -50,7 +50,7 @@ export const COPY: Record<Locale, Copy> = {
       body: "Najbolji AI agent na svijetu — svaki prodajni poziv obavi bolje od čovjeka.",
       primaryCta: "Instaliraj sada",
       secondaryCta: "Isprobaj besplatno",
-      mediaAlt: "Klasična statua uz more, između palmi",
+      mediaAlt: "Statua klasične figure na obali mora, uokvirena kamenim stepenicama i bršljanom",
     },
     brandsLabel: "Kompanije koje koriste runcycle",
     meta: {
@@ -76,7 +76,7 @@ export const COPY: Record<Locale, Copy> = {
       body: "The world's best AI agent - handles every sales call better than a human.",
       primaryCta: "Install now",
       secondaryCta: "Try for free",
-      mediaAlt: "Classical statue by the sea, framed by palm trees",
+      mediaAlt: "Classical statue on a sea shore, framed by stone steps and ivy",
     },
     brandsLabel: "Companies using runcycle",
     meta: {

@@ -29,3 +29,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# izvorni slojevi za hero (veliki PNG-ovi iz ChatGPT-a).
+# Generisani asseti za web su u /public/hero i oni se commituju.
+/assets-source/*.png
+/assets-source/out/
